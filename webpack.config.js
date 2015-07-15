@@ -14,6 +14,7 @@ module.exports = {
     },
     module: {
         loaders: [
+            { test: /\.es6.js/, loader: "babel-loader" },
             { test: /\.less$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") }
         ]
     },
