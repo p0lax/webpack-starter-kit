@@ -1,5 +1,6 @@
 var webpack = require("webpack"),
     path = require("path"),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -16,7 +17,6 @@ module.exports = {
         loaders: [
             { test: /\.es6.js$/, loader: "babel-loader" },
             { test: /\.less$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") },
-            { test: /\.html$/, loader: "html" },
             { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/, loader: "file" }
         ]
     },
@@ -27,7 +27,12 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery"
         }),
-        new webpack.optimize.CommonsChunkPlugin("libs", "libs.[hash].js")
+        new webpack.optimize.CommonsChunkPlugin("libs", "libs.[hash].js"),
+        new HtmlWebpackPlugin({
+            title: 'Test App',
+            template: 'templates/index.html',
+            filename: 'index.html'
+        })
     ],
     resolve: {
         alias: {
