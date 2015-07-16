@@ -14,8 +14,10 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.es6.js/, loader: "babel-loader" },
-            { test: /\.less$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") }
+            { test: /\.es6.js$/, loader: "babel-loader" },
+            { test: /\.less$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") },
+            { test: /\.html$/, loader: "html" },
+            { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/, loader: "file" }
         ]
     },
     plugins: [
@@ -31,6 +33,7 @@ module.exports = {
         alias: {
             "jquery": path.join(__dirname, "/bower_components/jquery/dist/jquery.min.js")
         },
-        extensions: ["", ".js", ".jsx"]
-    }
+        extensions: ["", ".js", ".jsx", ".html"]
+    },
+
 };

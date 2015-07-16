@@ -1,4 +1,5 @@
 var ModuleOne = require('./modules/ModuleOne.es6');
+require('../templates/index.html');
 var app = {
     modules: [],
 
