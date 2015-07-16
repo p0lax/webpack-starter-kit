@@ -3,5 +3,4 @@ class ModuleOne {
         console.log('Hello, i\'m module one!');
     }
 }
-
 export default ModuleOne;
