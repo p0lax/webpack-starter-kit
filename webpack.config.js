@@ -17,7 +17,14 @@ module.exports = {
         loaders: [
             { test: /\.es6.js$/, loader: "babel-loader" },
             { test: /\.(css|less)$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") },
-            { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/, loader: "file?limit=20000&name=img/[hash].[ext]" }
+            { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/, loader: "file?limit=20000&name=img/[hash].[ext]" },
+            { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?name=fonts/[hash].[ext]&mimetype=application/font-woff" },
+            { test: /\.swf$/, loader: "file-loader?name=fonts/[hash].[ext]" },
+            { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader?name=fonts/[hash].[ext]&mimetype=application/font-woff" },
+            { test: /\.ttf(\?v=[0-9]\.[0-9]\.[0-9])?$/,  loader: "file-loader?name=fonts/[hash].[ext]&mimetype=application/octet-stream" },
+            { test: /\.eot(\?v=[0-9]\.[0-9]\.[0-9])?$/,  loader: "file-loader?name=fonts/[hash].[ext]" },
+            { test: /\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,  loader: "file-loader?name=fonts/[hash].[ext]&mimetype=image/svg+xml" }
+
         ]
     },
     plugins: [
