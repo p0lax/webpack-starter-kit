@@ -1,6 +1,6 @@
 var webpack = require("webpack"),
     path = require("path"),
-    HtmlWebpackPlugin = require('html-webpack-plugin'), //Change to swig templates
+    HtmlWebpackPlugin = require('html-webpack-plugin'), //TODO: Change to swig templates
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
