@@ -1,4 +1,5 @@
-var ModuleOne = require('./modules/ModuleOne.es6');
+import ModuleOne from './modules/ModuleOne.js';
+
 var app = {
     modules: [],
 
