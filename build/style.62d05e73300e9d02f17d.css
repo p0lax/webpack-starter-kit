@@ -1,0 +1,9 @@
+/* Body block */
+body {
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+.programming-img {
+  background: url(img/b8d81f102e4a25f7b6d59008b1f5afb8.jpg) no-repeat;
+}
